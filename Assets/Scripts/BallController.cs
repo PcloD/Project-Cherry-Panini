@@ -43,7 +43,7 @@ public class BallController : MonoBehaviour {
 	}
 
 	void HandleMovement(){
-		rb.AddForce((Input.GetAxis("Horizontal") * moveForce * rightMove) + (Input.GetAxis("Vertical") * moveForce * upMove));
+		rb.AddTorque((Input.GetAxis("Vertical") * moveForce * rightMove) + (Input.GetAxis("Horizontal") * moveForce * -upMove));
 		if(Input.GetButtonDown("Jump") && IsGrounded()){
 			rb.AddForce(Vector3.up * jumpForce);
 		}
